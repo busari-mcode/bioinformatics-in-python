@@ -1,13 +1,21 @@
-# DNA Toolset/Code testing file
-from DNAToolkit import *
-import random
+# *************************************** LEARNING PHASE 3 *******************************************
+# ****************Rosalind problems: Counting DNA Nucleotides*************
 
-# Creating a random DNA Sequence for testing:
-randDNAStr = ''.join([random.choice(Nucleotides)
-                      for nuc in range(50)])
 
-print(validateSeq(randDNAStr))
-print(countNucFrequency(randDNAStr))
+
+# *************************************** LEARNING PHASE 2 *******************************************
+# ****************Counting Nucleotides in the Validated random DNA String generated*************
+
+# # DNA Toolset/Code testing file
+# from DNAToolkit import *
+# import random
+
+# # Creating a random DNA Sequence for testing:
+# randDNAStr = ''.join([random.choice(Nucleotides)
+#                       for nuc in range(50)])
+
+# DNAStr = validateSeq(randDNAStr)
+# print(countNucFrequency(DNAStr))
 
 
 # ************************ LEARNING PHASE 1 ******************************
