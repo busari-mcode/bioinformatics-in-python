@@ -6,16 +6,16 @@
 # *************************************** LEARNING PHASE 2 *******************************************
 # ****************Counting Nucleotides in the Validated random DNA String generated*************
 
-# # DNA Toolset/Code testing file
-# from DNAToolkit import *
-# import random
+# DNA Toolset/Code testing file
+from DNAToolkit import *
+import random
 
-# # Creating a random DNA Sequence for testing:
-# randDNAStr = ''.join([random.choice(Nucleotides)
-#                       for nuc in range(50)])
+# Creating a random DNA Sequence for testing:
+randDNAStr = ''.join([random.choice(Nucleotides)
+                      for nuc in range(50)])
 
-# DNAStr = validateSeq(randDNAStr)
-# print(countNucFrequency(DNAStr))
+DNAStr = validateSeq(randDNAStr)
+print(countNucFrequency(DNAStr))
 
 
 # ************************ LEARNING PHASE 1 ******************************
