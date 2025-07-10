@@ -4,6 +4,7 @@ def countNucFrequency(seq):
         tmpFreqDict[nuc] += 1
     return tmpFreqDict
 
-DNAString = 'ATCGTCTGTG'
+DNAString = 'AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC'
 result = countNucFrequency(DNAString)
 print(result)
+print(' '.join([str(val) for key, val in result.items()]))
