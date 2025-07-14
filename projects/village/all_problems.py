@@ -27,15 +27,15 @@ with open('projects/village/output.txt', 'w') as f:
 #         result += x
 # print(result)
 
-# # method 2
-# startPos = 100
-# endPos = 200
+# method 2
+startPos = 100
+endPos = 200
 
-# numbList = [x for x in range(startPos, endPos + 1) if x % 2 != 0]
-# result = sum([x for x in range(startPos, endPos + 1) if x % 2 != 0])
+numbList = [x for x in range(startPos, endPos + 1) if x % 2 != 0]
+result = sum([x for x in range(startPos, endPos + 1) if x % 2 != 0])
 
-# print(numbList)
-# print(result)
+print(numbList)
+print(result)
 
 
 # ********* Strings and Lists ************
