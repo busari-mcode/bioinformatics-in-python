@@ -12,8 +12,6 @@ with open('projects/village/output.txt', 'w') as f:
     f.write(''.join([line for line in outputFile]))
 
 
-
-
 #********************* Conditions and Loops *******************
 # add all the odd integers from 100 to 200
 
