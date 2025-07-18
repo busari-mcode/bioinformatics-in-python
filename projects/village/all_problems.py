@@ -1,15 +1,32 @@
+#********************* Dictionaries *******************
+txtStr = 'We tried list and we tried dicts also we tried Zen'
+
+# Generic approach:
+wordCountDict = {}
+
+for word in txtStr.split(' '):
+    if word in wordCountDict:
+        wordCountDict[word] += 1
+    else:
+        wordCountDict[word] = 1
+
+for key, value in wordCountDict.items():
+    print(key, value)
+
+
+
 #********************* Working with Files *******************
-outputFile = []
+# outputFile = []
 
-with open('projects/village/input.txt', 'r') as f:
-    outputFile = [line for pos, line in enumerate(
-        f.readlines()) if pos % 2 != 0]
+# with open('projects/village/input.txt', 'r') as f:
+#     outputFile = [line for pos, line in enumerate(
+#         f.readlines()) if pos % 2 != 0]
 
-print(outputFile) # just to confirm that previous code works
+# print(outputFile) # just to confirm that previous code works
 
-# this will create a new file 'output.txt' with content in it
-with open('projects/village/output.txt', 'w') as f:
-    f.write(''.join([line for line in outputFile]))
+# # this will create a new file 'output.txt' with content in it
+# with open('projects/village/output.txt', 'w') as f:
+#     f.write(''.join([line for line in outputFile]))
 
 
 #********************* Conditions and Loops *******************
@@ -25,15 +42,15 @@ with open('projects/village/output.txt', 'w') as f:
 #         result += x
 # print(result)
 
-# method 2
-startPos = 100
-endPos = 200
+# # method 2
+# startPos = 100
+# endPos = 200
 
-numbList = [x for x in range(startPos, endPos + 1) if x % 2 != 0]
-result = sum([x for x in range(startPos, endPos + 1) if x % 2 != 0])
+# numbList = [x for x in range(startPos, endPos + 1) if x % 2 != 0]
+# result = sum([x for x in range(startPos, endPos + 1) if x % 2 != 0])
 
-print(numbList)
-print(result)
+# print(numbList)
+# print(result)
 
 
 # ********* Strings and Lists ************
