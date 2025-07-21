@@ -1,30 +1,30 @@
 #********************* Dictionaries *******************
-# # method 1
-# txtStr = 'We tried list and we tried dicts also we tried Zen'
-
-# # Generic approach:
-# wordCountDict = {}
-
-# for word in txtStr.split(' '):
-#     if word in wordCountDict:
-#         wordCountDict[word] += 1
-#     else:
-#         wordCountDict[word] = 1
-
-# for key, value in wordCountDict.items():
-#     print(key, value)
-
-
-# method 2
-# optimized pythonic approach using collections module
-from collections import Counter
-
+# method 1
 txtStr = 'We tried list and we tried dicts also we tried Zen'
 
-wordCountDict = Counter(txtStr.split(' '))
+# Generic approach:
+wordCountDict = {}
+
+for word in txtStr.split(' '):
+    if word in wordCountDict:
+        wordCountDict[word] += 1
+    else:
+        wordCountDict[word] = 1
 
 for key, value in wordCountDict.items():
     print(key, value)
+
+
+# # method 2
+# # optimized pythonic approach using collections module
+# from collections import Counter
+
+# txtStr = 'We tried list and we tried dicts also we tried Zen'
+
+# wordCountDict = Counter(txtStr.split(' '))
+
+# for key, value in wordCountDict.items():
+#     print(key, value)
 
 
 #********************* Working with Files *******************
