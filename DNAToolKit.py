@@ -2,6 +2,7 @@
 import collections
 
 Nucleotides = ["A", "C", "G", "T"]
+DNA_ReverseComplement = {'A': 'T', 'T': 'A', 'G': 'C', 'C': 'G'}
 
 # Check the sequence to make sure it is a DNA String
 def validateSeq(dna_seq):
@@ -26,6 +27,8 @@ def transcription(seq):
     # DNA -> RNA Transcription
     return seq.replace("T", "U")
 
+def reverse_complement(seq):
+    return ''.join([DNA_ReverseComplement[nuc] for nuc in seq])[::-1]
 
 
 
