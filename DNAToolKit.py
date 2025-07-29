@@ -5,6 +5,7 @@ from structures import *
 
 # Check the sequence to make sure it is a DNA String
 def validateSeq(dna_seq):
+    """validating sequence for DNA string"""
     tmpseq = dna_seq.upper()
     for nuc in tmpseq:
         if nuc not in Nucleotides:
@@ -13,6 +14,7 @@ def validateSeq(dna_seq):
 
 
 def countNucFrequency(seq):
+    """counting nucleotide frequency"""
     tmpFreqDict = {"A": 0, "C": 0, "G": 0, "T": 0}
     for nuc in seq:
         tmpFreqDict[nuc] += 1

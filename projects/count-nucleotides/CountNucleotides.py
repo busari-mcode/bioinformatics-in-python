@@ -1,4 +1,5 @@
 def countNucFrequency(seq):
+    """counting nucleotide frequency"""
     tmpFreqDict = {"A": 0, "C": 0, "G": 0, "T": 0}
     for nuc in seq:
         tmpFreqDict[nuc] += 1
