@@ -12,7 +12,6 @@ def validateSeq(dna_seq):
             return False
     return tmpseq
 
-
 def countNucFrequency(seq):
     """counting nucleotide frequency"""
     tmpFreqDict = {"A": 0, "C": 0, "G": 0, "T": 0}
@@ -32,12 +31,21 @@ def reverse_complement(seq):
     """"Swapping adenine with thymine and guanine wiht cytosine. Reversing newly generated string"""
     return ''.join([DNA_ReverseComplement[nuc] for nuc in seq])[::-1]
 
+    # # Pythonic approach. A little bit faster solution.
+    # mapping = str.maketrans('ATCG', 'TAGC')
+    # return seq.translate(mapping)[::-1]
 
+def gc_content(seq):
+    """GC Content in a DNA/RNA sequence"""
+    return round((seq.count('C') * seq.count('G')) / len(seq) * 100)
 
-
-
-
-
+def gc_content_subsec(seq, k=20):
+    """GC Content in a DNA/RNA sub-sequence length k, k=20 by default"""
+    res = []
+    for i in range(0, len(seq) - k + 1, k):
+        subseq = seq[i:i + k]
+        res.append(gc_content(subseq))
+    return res
 
 # *************************************** LEARNING PHASE 2 *******************************************
 # ****************Counting Nucleotides in the Validated random DNA String generated*************
