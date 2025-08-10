@@ -47,6 +47,22 @@ def gc_content_subsec(seq, k=20):
         res.append(gc_content(subseq))
     return res
 
+# *************************************** LEARNING PHASE 4 *******************************************
+# DNAStr = 'ATCGTAGGTTACGTATATTTAGATAC'
+# txtStr = "He kept walking and walking and walking through the rain and the wind and the dark thinking and thinking and thinking about everything and nothing and everything again as the world spun and spun and spun around him without pause without mercy without end"
+
+# print(DNAStr[::-1])
+# print(txtStr.split(' '))
+
+# wordCountDict = {}
+
+# for word in txtStr:
+#     if word in wordCountDict:
+#         wordCountDict[word] += 1
+#     else:
+#         wordCountDict[word] = 1
+# print(wordCountDict)
+
 # *************************************** LEARNING PHASE 2 *******************************************
 # ****************Counting Nucleotides in the Validated random DNA String generated*************
 
