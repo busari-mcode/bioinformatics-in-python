@@ -47,6 +47,11 @@ def gc_content_subsec(seq, k=20):
         res.append(gc_content(subseq))
     return res
 
+def translate_seq(seq, init_pos=0):
+    """Translates a DNA Sequence into an aminoacid sequence"""
+    return [DNA_Codons[seq[pos:pos + 3]] for pos in range(init_pos, len(seq) - 2, 3)]
+
+
 # *************************************** LEARNING PHASE 4 *******************************************
 # DNAStr = 'ATCGTAGGTTACGTATATTTAGATAC'
 # txtStr = "He kept walking and walking and walking through the rain and the wind and the dark thinking and thinking and thinking about everything and nothing and everything again as the world spun and spun and spun around him without pause without mercy without end"
