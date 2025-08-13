@@ -3,6 +3,7 @@ import collections
 # from structures file, import everything
 from structures import *
 
+
 # Check the sequence to make sure it is a DNA String
 def validateSeq(dna_seq):
     """validating sequence for DNA string"""
@@ -50,6 +51,19 @@ def gc_content_subsec(seq, k=20):
 def translate_seq(seq, init_pos=0):
     """Translates a DNA Sequence into an aminoacid sequence"""
     return [DNA_Codons[seq[pos:pos + 3]] for pos in range(init_pos, len(seq) - 2, 3)]
+
+def codon_usage(seq, aminoacid):
+    """Provides the frequency of each codon encoding a given aminoacid in a DNA sequence"""
+    tmpList = []
+    for i in range(0, len(seq) - 2, 3):
+        if DNA_Codons[seq[i:i + 3]] == aminoacid:
+            tmpList.append(seq[i:i + 3])
+
+    freqDict = dict(collections.Counter(tmpList))
+    totalWight = sum(freqDict.values())
+    for seq in freqDict:
+        freqDict[seq] = round(freqDict[seq] / totalWight, 2)
+    return freqDict
 
 
 # *************************************** LEARNING PHASE 4 *******************************************
