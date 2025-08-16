@@ -1,0 +1,51 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+N = 48  # grid resolution
+rng = np.random.default_rng(0)
+
+# 2D grid
+x = np.linspace(-1, 1, N)
+y = np.linspace(-1, 1, N)
+xx, yy = np.meshgrid(x, y, indexing="ij")
+
+# Smooth random field
+noise = rng.standard_normal((N, N))
+noise = np.apply_along_axis(lambda m: np.convolve(m, np.ones(9)/9, mode="same"), 0, noise)
+noise = np.apply_along_axis(lambda m: np.convolve(m, np.ones(9)/9, mode="same"), 1, noise)
+
+# Bottom and top surfaces
+z_bottom = (0.2 * N + 0.1 * N * (xx**2 + yy**2) + 0.05 * N * noise).astype(int)
+z_top = (0.7 * N - 0.05 * N * (xx**2 + yy**2) - 0.05 * N * noise).astype(int)
+
+# Ensure minimum thickness
+z_top = np.maximum(z_top, z_bottom + 3)
+
+# Fill voxel volume between bottom and top
+volume = np.zeros((N, N, N), dtype=bool)
+for i in range(N):
+    for j in range(N):
+        volume[i, j, z_bottom[i, j]:z_top[i, j] + 1] = True
+
+# Facecolors based on height
+facecolors = np.zeros((*volume.shape, 4))
+for i in range(N):
+    for j in range(N):
+        for k in range(z_bottom[i, j], z_top[i, j] + 1):
+            h = (k - z_bottom.min()) / (z_top.max() - z_bottom.min() + 1e-6)
+            color = [0.2 + 0.8 * h, 0.3 + 0.4 * (1 - h), 0.8 - 0.5 * h, 0.9]
+            facecolors[i, j, k] = color
+
+# Plot
+fig = plt.figure(figsize=(8, 8))
+ax = fig.add_subplot(111, projection="3d")
+ax.voxels(volume, facecolors=facecolors, edgecolor=None)
+
+ax.set_box_aspect([1, 1, 0.7])
+ax.view_init(elev=30, azim=35)
+ax.dist = 8
+ax.set_xticks([]); ax.set_yticks([]); ax.set_zticks([])
+ax.set_title("Irregular Cell Volume (Voxels Filled from Bottom to Top)")
+
+plt.show()
