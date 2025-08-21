@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-Readme
-=======
-**Bioinformatics in Python**
->>>>>>> 934b87cb9e921445184f66d3f43b505183ea8e3b
+# Bioinformatics
+
+Bioinformatics in Python is a collection of scripts, utilities, and projects for solving computational biology problems. The repository includes implementations of DNA/RNA sequence analysis, structural modeling, and algorithmic solutions to classical bioinformatics challenges (e.g., Rosalind problems). It serves as both a learning resource and a toolkit for applying Python to biological data.
+
